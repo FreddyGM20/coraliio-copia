@@ -39,6 +39,7 @@ router.post('/filtro/hora', upload.none(), require('./pacientes/filtrohora'))
 router.post('/filtro/genero', upload.none(), require('./pacientes/filtrogen'))
 router.post('/filtro/precio', upload.none(), require('./pacientes/filtroprecio'))
 router.post('/filtro/especialidad', upload.none(), require('./pacientes/filtroespe'))
+router.post('/filtro/edad', upload.none(), require('./pacientes/filtroedad'))
 router.post('/preferencias', upload.none(), require('./pacientes/preferencia'))
 
 router.put('/admin/editpi/:id', upload.none(), require('./admin/paciente/editifnoP'))
