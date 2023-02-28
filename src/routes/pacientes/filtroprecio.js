@@ -8,7 +8,7 @@ module.exports = async function (req, res) {
         const tokenver = await TokenVerify(token)
         const paciente = await userSchema.findById(tokenver._id)
         if (paciente.rol == "paciente") {
-            const disponible = await userSchema.find({ $and: [{ valorh: { $gte: req.body.valorhi }}, { valorh: { $lte: req.body.valorhf }}, { rol: "terapeuta" }] })
+            const disponible = await userSchema.find({ $and: [{ valorh: { $gte: req.query.valorhi }}, { valorh: { $lte: req.query.valorhf }}, { rol: "terapeuta" }] })
             return res.status(200).send({ response: "Success", data: disponible })
         } else {
             return res.status(200).send({ response: "Error", message: "Este es un usuario normal" })
